@@ -4,6 +4,28 @@ Aplicação para acompanhar domínios `.br`. O painel permite cadastrar domínio
 
 O cadastro consulta WHOIS, RDAP e ISAVAIL do Registro.br. A disponibilidade só é confirmada por uma resposta válida do ISAVAIL. Erros de consulta preservam o último estado confirmado.
 
+## Capturas de tela
+
+### Painel em modo claro
+
+![Lista de domínios monitorados no modo claro](docs/capturas/painel-claro.png)
+
+### Painel em modo escuro
+
+![Lista de domínios monitorados no modo escuro](docs/capturas/painel-escuro.png)
+
+### Cadastro de domínio
+
+![Formulário de cadastro de domínio](docs/capturas/cadastrar-dominio.png)
+
+### Notificações
+
+![Página de notificações](docs/capturas/notificacoes.png)
+
+### Configurações de alertas
+
+![Página de configurações de alertas](docs/capturas/configuracoes.png)
+
 ## Estrutura
 
 | Diretório | Responsabilidade |
