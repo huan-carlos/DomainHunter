@@ -37,21 +37,30 @@ pnpm --filter @domainhunter/web dev
 pnpm --filter @domainhunter/automations dev
 ```
 
-Defina `DOMAINHUNTER_PASSWORD` antes de expor o painel. Sem essa variável, a senha local padrão é `domainhunter`. A API não possui autenticação própria; mantenha-a acessível apenas na rede interna ou no endereço local.
+**Nenhuma variável de ambiente é obrigatória para testar localmente.** Sem `DOMAINHUNTER_PASSWORD`, o painel usa a senha padrão `domainhunter`; defina uma senha própria antes de permitir acesso de outras pessoas. A API não possui autenticação própria; mantenha-a acessível apenas na rede interna ou no endereço local.
 
 ## Configuração
 
-Copie `.env.example` para consultar as variáveis disponíveis. O Node não carrega esse arquivo automaticamente na execução local: exporte as variáveis no terminal ou use `node --env-file=.env` ao iniciar cada processo.
+O arquivo [`.env.example`](./.env.example) lista as variáveis disponíveis. Para usar uma variável na execução local com `pnpm dev`, exporte-a no terminal antes de iniciar os processos; o `pnpm` não carrega `.env` automaticamente.
+
+| Cenário | Variáveis necessárias |
+| --- | --- |
+| Teste local com valores padrão | Nenhuma |
+| Painel com senha própria | `DOMAINHUNTER_PASSWORD` |
+| Docker Compose | `DOMAINHUNTER_PASSWORD` (obrigatória; o Compose recusa iniciar sem ela) |
+| Alertas por e-mail | `DOMAINHUNTER_NOTIFICATION_EMAIL_TO`, `DOMAINHUNTER_SMTP_HOST` e `DOMAINHUNTER_SMTP_FROM`; usuário e senha se exigidos pelo servidor SMTP |
+
+O servidor e o worker usam o mesmo caminho padrão para o banco local. No Docker Compose, o caminho compartilhado já está configurado. Assim, `DOMAINHUNTER_DB_PATH` só precisa ser definido se você escolher outro local de armazenamento.
 
 | Variável | Uso |
 | --- | --- |
-| `DOMAINHUNTER_PASSWORD` | Senha do painel; a sessão expira em 12 horas |
+| `DOMAINHUNTER_PASSWORD` | Senha do painel; obrigatória no Docker Compose; a sessão expira em 12 horas |
 | `DOMAINHUNTER_DB_PATH` | Caminho do banco SQLite compartilhado pelo servidor e worker |
 | `DOMAINHUNTER_API_URL` | Endereço da API usado pelo painel; padrão `http://127.0.0.1:3000` |
 | `HOST` e `PORT` | Endereço e porta de escuta de cada processo |
 | `DOMAINHUNTER_POLL_MS` | Intervalo de consulta da fila pelo worker; padrão 5000 ms |
 | `DOMAINHUNTER_NOTIFICATION_EMAIL_TO` | Destinatário dos alertas por e-mail |
-| `DOMAINHUNTER_SMTP_*` | Configuração SMTP; sem host, os alertas ficam apenas no painel |
+| `DOMAINHUNTER_SMTP_*` | Configuração SMTP para envio por e-mail; sem host, os alertas ficam apenas no painel |
 | `WEB_PORT` | Porta local publicada pelo Docker Compose; padrão 6645 |
 | `REGISTRO_BR_URL` | Endereço do Registro.br usado pelo painel |
 
@@ -61,7 +70,7 @@ O painel armazena um e-mail de alerta e a antecedência de aviso de expiração.
 
 ```bash
 cp .env.example .env
-# Defina DOMAINHUNTER_PASSWORD no arquivo .env
+# No arquivo .env, descomente DOMAINHUNTER_PASSWORD e escolha uma senha forte.
 docker compose up -d --build
 ```
 
