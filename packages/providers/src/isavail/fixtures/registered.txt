@@ -1,0 +1,4 @@
+% Copyright registro.br
+ST 2 123456789
+domainhunter.eng.br
+2007-03-15|published|fork.domainhunter.eng.br|domainhunter.eng.br

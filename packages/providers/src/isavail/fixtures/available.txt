@@ -1,0 +1,3 @@
+% Copyright registro.br
+ST 0 123456789
+domainhunter.com.br

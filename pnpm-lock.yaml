@@ -1,0 +1,96 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      '@types/node':
+        specifier: ^24
+        version: 24.13.3
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  apps/automations:
+    dependencies:
+      '@domainhunter/domain-core':
+        specifier: workspace:*
+        version: link:../../packages/domain-core
+      '@domainhunter/notifications':
+        specifier: workspace:*
+        version: link:../../packages/notifications
+      '@domainhunter/providers':
+        specifier: workspace:*
+        version: link:../../packages/providers
+
+  apps/server:
+    dependencies:
+      '@domainhunter/domain-core':
+        specifier: workspace:*
+        version: link:../../packages/domain-core
+      '@domainhunter/providers':
+        specifier: workspace:*
+        version: link:../../packages/providers
+
+  apps/web:
+    dependencies:
+      '@domainhunter/domain-core':
+        specifier: workspace:*
+        version: link:../../packages/domain-core
+
+  packages/domain-core: {}
+
+  packages/notifications:
+    dependencies:
+      '@domainhunter/domain-core':
+        specifier: workspace:*
+        version: link:../domain-core
+      nodemailer:
+        specifier: ^6.9.16
+        version: 6.10.1
+    devDependencies:
+      '@types/nodemailer':
+        specifier: ^6.4.17
+        version: 6.4.24
+
+  packages/providers: {}
+
+packages:
+
+  '@types/node@24.13.3':
+    resolution: {integrity: sha512-Dh8vAsV36ig5wa9OX4pXvMc9D3Veibfw2wix0CUwYODLD8nkj9UsLjASr49nPg+2eKzxhBV+v7L8pXvT4e639Q==}
+
+  '@types/nodemailer@6.4.24':
+    resolution: {integrity: sha512-Ww4u0rT9wQNXh4JiQaIwx3QWdcOFXzOjQA2zc+jtFYNmQiT4mIUqcDin51bDFdkzKubFnQCZNK7FIHlPKQ/q9w==}
+
+  nodemailer@6.10.1:
+    resolution: {integrity: sha512-Z+iLaBGVaSjbIzQ4pX6XV41HrooLsQ10ZWPUehGmuantvzWoDVBnmsdUcOIDM1t+yPor5pDhVlDESgOMEGxhHA==}
+    engines: {node: '>=6.0.0'}
+
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+  undici-types@7.18.2:
+    resolution: {integrity: sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w==}
+
+snapshots:
+
+  '@types/node@24.13.3':
+    dependencies:
+      undici-types: 7.18.2
+
+  '@types/nodemailer@6.4.24':
+    dependencies:
+      '@types/node': 24.13.3
+
+  nodemailer@6.10.1: {}
+
+  typescript@5.9.3: {}
+
+  undici-types@7.18.2: {}

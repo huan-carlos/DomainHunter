@@ -1,0 +1,4 @@
+% Copyright registro.br
+ST 3 123456789
+domainhunter.com.br
+reserved CG

@@ -1,0 +1,4 @@
+% Copyright registro.br
+ST 4 123456789
+domainhunter.com
+invalid fqdn

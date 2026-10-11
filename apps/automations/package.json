@@ -1,0 +1,19 @@
+{
+  "name": "@domainhunter/automations",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "node --experimental-strip-types src/index.ts",
+    "run": "node --experimental-strip-types src/index.ts",
+    "test": "node --test --experimental-strip-types 'src/**/*.test.ts'",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@domainhunter/domain-core": "workspace:*",
+    "@domainhunter/providers": "workspace:*",
+    "@domainhunter/notifications": "workspace:*"
+  }
+}

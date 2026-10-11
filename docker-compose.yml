@@ -1,0 +1,70 @@
+services:
+  server:
+    container_name: domainhunter-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["node", "--experimental-strip-types", "apps/server/src/index.ts"]
+    environment:
+      HOST: 0.0.0.0
+      PORT: "3000"
+      DOMAINHUNTER_DB_PATH: /data/domainhunter.sqlite
+    volumes:
+      - domainhunter-data:/data
+    restart: unless-stopped
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://127.0.0.1:3000/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  web:
+    container_name: domainhunter-web
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["node", "--experimental-strip-types", "apps/web/src/index.ts"]
+    environment:
+      HOST: 0.0.0.0
+      PORT: "8080"
+      DOMAINHUNTER_API_URL: http://server:3000
+      DOMAINHUNTER_PASSWORD: ${DOMAINHUNTER_PASSWORD:?set DOMAINHUNTER_PASSWORD in .env}
+      REGISTRO_BR_URL: ${REGISTRO_BR_URL:-https://registro.br/dominio/}
+    ports:
+      - "127.0.0.1:${WEB_PORT:-6645}:8080"
+    depends_on:
+      server:
+        condition: service_healthy
+    restart: unless-stopped
+
+  automations:
+    container_name: domainhunter-automations
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["node", "--experimental-strip-types", "apps/automations/src/index.ts"]
+    environment:
+      DOMAINHUNTER_DB_PATH: /data/domainhunter.sqlite
+      DOMAINHUNTER_POLL_MS: ${DOMAINHUNTER_POLL_MS:-5000}
+      DOMAINHUNTER_WORKER_ID: ${DOMAINHUNTER_WORKER_ID:-automations-1}
+      DOMAINHUNTER_NOTIFICATION_EMAIL_TO: ${DOMAINHUNTER_NOTIFICATION_EMAIL_TO:-}
+      DOMAINHUNTER_SMTP_HOST: ${DOMAINHUNTER_SMTP_HOST:-}
+      DOMAINHUNTER_SMTP_PORT: ${DOMAINHUNTER_SMTP_PORT:-587}
+      DOMAINHUNTER_SMTP_SECURE: ${DOMAINHUNTER_SMTP_SECURE:-false}
+      DOMAINHUNTER_SMTP_USER: ${DOMAINHUNTER_SMTP_USER:-}
+      DOMAINHUNTER_SMTP_PASS: ${DOMAINHUNTER_SMTP_PASS:-}
+      DOMAINHUNTER_SMTP_FROM: ${DOMAINHUNTER_SMTP_FROM:-}
+    volumes:
+      - domainhunter-data:/data
+    depends_on:
+      server:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  domainhunter-data:

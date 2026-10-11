@@ -1,0 +1,21 @@
+{
+  "objectClassName": "domain",
+  "ldhName": "registro.br",
+  "status": ["active"],
+  "nameservers": [
+    {
+      "objectClassName": "nameserver",
+      "ldhName": "a.dns.br"
+    }
+  ],
+  "events": [
+    {
+      "eventAction": "registration",
+      "eventDate": "1999-02-21T12:00:00Z"
+    },
+    {
+      "eventAction": "last changed",
+      "eventDate": "2018-04-02T12:19:10Z"
+    }
+  ]
+}

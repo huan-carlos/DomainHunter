@@ -1,0 +1,7 @@
+{
+  "objectClassName": "domain",
+  "handle": "broken.domainhunter.com.br",
+  "status": ["active"],
+  "events": "not-an-array",
+  "nameservers": { "ldhName": "ns1.domainhunter.com.br" }
+}

@@ -1,0 +1,6 @@
+HTTP/1.1 502 Bad Gateway
+Content-Type: text/html
+
+<html><head><title>502 Bad Gateway</title></head>
+<body><h1>Bad Gateway</h1><p>The proxy received an invalid
+response from the upstream server.</p></body></html>

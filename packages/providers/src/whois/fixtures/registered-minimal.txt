@@ -1,0 +1,23 @@
+% Copyright (c) Nic.br - Use of this data is governed by the Use and
+% Privacy Policy at https://registro.br/upp . Distribution,
+% commercialization, reproduction, and use for advertising or similar
+% purposes are expressly prohibited.
+
+domain:      registro.br
+owner:       Nucleo de Inf. e Coord. do Ponto BR - NIC.BR
+owner-c:     FAN
+tech-c:      FAN
+nserver:     a.dns.br
+nsstat:      20260804 AA
+nslastaa:    20260804
+created:     19990221 #142485
+changed:     20180402
+status:      published
+
+nic-hdl-br:  FAN
+person:      Frederico Augusto de Carvalho Neves
+created:     19971217
+changed:     20241121
+
+% whois.registro.br only accepts exact match queries for domains,
+% registrants, contacts, tickets, providers, IPs, and ASNs.

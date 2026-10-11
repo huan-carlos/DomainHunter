@@ -1,0 +1,9 @@
+{
+  "objectClassName": "domain",
+  "handle": "nao-existe-domainhunter-test.com.br",
+  "ldhName": "nao-existe-domainhunter-test.com.br",
+  "errorCode": 404,
+  "title": "Not Found",
+  "description": ["Domain not found"],
+  "lang": "en"
+}

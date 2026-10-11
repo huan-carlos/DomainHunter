@@ -1,0 +1,59 @@
+{
+  "objectClassName": "domain",
+  "handle": "domainhunter.com.br",
+  "ldhName": "domainhunter.com.br",
+  "rdapConformance": ["rdap_level_0", "br_rdap_profile_0"],
+  "status": ["active"],
+  "nameservers": [
+    {
+      "objectClassName": "nameserver",
+      "ldhName": "ns1.domainhunter.com.br"
+    },
+    {
+      "objectClassName": "nameserver",
+      "ldhName": "ns2.domainhunter.com.br"
+    }
+  ],
+  "entities": [
+    {
+      "objectClassName": "entity",
+      "handle": "05506560000136",
+      "vcardArray": [
+        "vcard",
+        [
+          ["version", {}, "text", "4.0"],
+          ["kind", {}, "text", "org"],
+          ["fn", {}, "text", "DomainHunter Tecnologia Ltda"]
+        ]
+      ],
+      "roles": ["registrant"]
+    },
+    {
+      "objectClassName": "entity",
+      "handle": "TEC999",
+      "vcardArray": [
+        "vcard",
+        [
+          ["version", {}, "text", "4.0"],
+          ["kind", {}, "text", "individual"],
+          ["fn", {}, "text", "Lex Luthor"]
+        ]
+      ],
+      "roles": ["technical"]
+    }
+  ],
+  "events": [
+    {
+      "eventAction": "registration",
+      "eventDate": "2022-04-15T12:00:00Z"
+    },
+    {
+      "eventAction": "expiration",
+      "eventDate": "2028-09-10T12:00:00Z"
+    },
+    {
+      "eventAction": "last changed",
+      "eventDate": "2026-08-01T12:19:10Z"
+    }
+  ]
+}

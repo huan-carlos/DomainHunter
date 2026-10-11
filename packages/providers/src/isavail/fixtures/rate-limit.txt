@@ -1,0 +1,3 @@
+% Copyright registro.br
+ST 8
+Query rate limit exceeded

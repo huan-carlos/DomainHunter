@@ -1,0 +1,4 @@
+% Copyright registro.br
+ST 1 123456789
+domainhunter.com.br
+2567849|2567856

@@ -1,0 +1,21 @@
+{
+  "name": "domainhunter",
+  "private": true,
+  "version": "0.1.0",
+  "description": "DomainHunter product monorepo — frontend, backend, and automations.",
+  "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "pnpm -r --parallel run dev",
+    "verify": "bash scripts/verify.sh",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "build": "pnpm -r build"
+  },
+  "devDependencies": {
+    "@types/node": "^24",
+    "typescript": "^5.9.3"
+  }
+}

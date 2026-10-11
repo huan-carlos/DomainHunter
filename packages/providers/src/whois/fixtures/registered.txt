@@ -1,0 +1,44 @@
+% Copyright (c) Nic.br - Use of this data is governed by the Use and
+% Privacy Policy at https://registro.br/upp . Distribution,
+% commercialization, reproduction, and use for advertising or similar
+% purposes are expressly prohibited.
+
+domain:      domainhunter.com.br
+owner:       DomainHunter Tecnologia Ltda
+ownerid:     12.345.678/0001-90
+responsible: Lex Luthor
+country:     BR
+owner-c:     LEX001
+tech-c:      TEC999
+billing-c:   FAT123
+nserver:     ns1.domainhunter.com.br
+nsstat:      20260804 AA
+nslastaa:    20260804
+nserver:     ns2.domainhunter.com.br
+nsstat:      20260804 AA
+nslastaa:    20260804
+dsrecord:    12345 ECDSA-SHA-256 ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789
+dsstatus:    20260804 DSOK
+dslastok:    20260804
+created:     20220415 #90341
+changed:     20260801
+expires:     20280910
+status:      published
+
+nic-hdl-br:  LEX001
+person:      Lex Luthor
+e-mail:      lex.luthor@domainhunter.com.br
+created:     20220415
+changed:     20260801
+
+nic-hdl-br:  TEC999
+person:      Mercy Graves
+e-mail:      ops@domainhunter.com.br
+created:     20220415
+changed:     20260720
+
+% Security and mail abuse issues should also be addressed to cert.br,
+% respectivelly to email @cert.br and email @cert.br
+%
+% whois.registro.br only accepts exact match queries for domains,
+% registrants, contacts, tickets, providers, IPs, and ASNs.
